@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import './bar.scss';
 
 function OffcanvasExample() {
   return (
@@ -12,7 +13,9 @@ function OffcanvasExample() {
         <Navbar key={expand} expand={expand} className="mb-3">
           <Container fluid>
             <div className='baa'>
-              <img className='m-16' src='/img/logo.png'/>
+              <ul className="navbar__logo">
+                <img src="/img/logo.png" />
+              </ul>
               <Navbar.Brand href="#">공공시설 예약 서비스</Navbar.Brand>
             </div>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
