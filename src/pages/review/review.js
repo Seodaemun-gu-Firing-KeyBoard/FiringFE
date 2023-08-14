@@ -5,7 +5,7 @@ import ModalPage from './component_/modal/modal';
 //import ModalContainer from "./component_/modal/modalcontainer";
 import NoteRaw from './component_/note-raw/note-raw';
 const Container = styled.div`
-  height: 100vh;
+  height: 820px;
   display: flex;
   justify-content: center;
   align-items: center;
