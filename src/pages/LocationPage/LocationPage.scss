@@ -1,0 +1,77 @@
+#appdiv{
+    width: 60vw;
+    height: 200vw ;
+    padding: 1rem;
+    margin: 0 auto;
+    #loc{
+        display: flex;
+        flex-direction: row; 
+    }
+    .locimg{
+      width: 100%;
+      border: 10px #808080 solid;
+      border-radius: 20px;
+  }
+}
+@media only screen and (max-width: 1317px) {
+    #loc{
+        // 반응형 웹 - 크기가 일정 이상 줄어들면 아이템들 줄바꿈
+        flex-flow: row wrap;
+    }
+    #first {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
+    #second{
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+// #searchbar{
+//     width: 100%;
+// }
+
+#buttons{
+    margin-top: 48px;
+    #tb{
+        background:#7fccde;
+        color:#fff;
+        border:none;
+        position:relative;
+        height:45px;
+        font-size:1.6em;
+        padding:0 1em;
+        cursor:pointer;
+        transition:800ms ease all;
+        outline:none;
+        margin-right: 20px;
+      }
+      #tb:hover{
+        background:#fff;
+        color:#7fccde;
+      }
+      #tb:before, #tb:after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: #7fccde;
+        transition:400ms ease all;
+      }
+      #tb:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+      }
+      #tb:hover:before, #tb:hover:after{
+        width:100%;
+        transition:800ms ease all;
+      }
+      
+}

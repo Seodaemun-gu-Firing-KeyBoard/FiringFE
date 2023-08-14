@@ -1,0 +1,45 @@
+
+#btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    //이 부분 ....★
+    //height: 50%;
+    align-self: center;
+    button{
+        height: 50px;
+        width: 40%;
+        min-width: max-content;
+        background:#7fccde;
+        border-radius: 10px;
+        border: none;
+    }
+    
+}
+#a {
+	-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	display: block;
+	margin: 20px auto;
+	//max-width: 180px;
+	//text-decoration: none;
+	//padding: 20px 30px;
+}
+
+#a{
+	color: #808080;
+}
+
+#a:hover {
+	color: rgba(255, 255, 255, 0.85);
+	box-shadow: #808080 0 0px 0px 40px inset;
+}
+
+
+
+
+    

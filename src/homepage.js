@@ -22,7 +22,7 @@ function homepage() {
                             faucibus. Mauris eleifend sagittis mollis. 
                             Nulla finibus arcu eu tortor gravida aliquet</p>
                         </div>
-                        <Link to="/Search">
+                        <Link to="/p/1">
                             <button>즉시 예약하기</button>
                         </Link>
                     </div>
@@ -37,7 +37,7 @@ function homepage() {
                             faucibus. Mauris eleifend sagittis mollis. 
                             Nulla finibus arcu eu tortor gravida aliquet</p>
                         </div>
-                        <Link to="/Search">
+                        <Link to="/p/2">
                             <button>즉시 예약하기</button>
                         </Link>
                     </div>
@@ -52,7 +52,7 @@ function homepage() {
                             faucibus. Mauris eleifend sagittis mollis. 
                             Nulla finibus arcu eu tortor gravida aliquet</p>
                         </div>
-                        <Link to="/Search">
+                        <Link to="/p/3">
                             <button>즉시 예약하기</button>
                         </Link>
                     </div>
@@ -66,7 +66,7 @@ function homepage() {
         <div class="container text-center">
             <div class="row">
                 <div class="col">
-                    <Link to="/Search">
+                    <Link to="/p">
                         <ul className="gym">
                             <img src="img/gym.png" />
                             <p>체육시설</p>
@@ -75,7 +75,7 @@ function homepage() {
                 </div>
 
                 <div class="col">
-                    <Link to="/Search">
+                    <Link to="/p">
                         <ul className="space">
                             <img src="img/meething-room.png" />
                             <p>공간시설</p>
