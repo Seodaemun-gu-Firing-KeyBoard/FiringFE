@@ -1,23 +1,18 @@
+import './box-bar.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import './bar.scss';
 
-function OffcanvasExample() {
+function BoxBar() {
   return (
     <>
-      {[false].map((expand) => (
-        <Navbar key={expand} expand={expand} className="mb-3">
-          <Container fluid>
-            <div className='baa'>
-              <ul className="navbar__logo">
-                <img src="/img/logo.png" />
-              </ul>
-              <Navbar.Brand href="#">공공시설 예약 서비스</Navbar.Brand>
-            </div>
+        {[false].map((expand) => (
+        <Navbar key={expand} expand={expand} className='boxbar'>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -46,11 +41,11 @@ function OffcanvasExample() {
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
-          </Container>
         </Navbar>
-      ))}
+  ))}
     </>
+
   );
 }
 
-export default OffcanvasExample;
+export default BoxBar;

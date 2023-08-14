@@ -1,7 +1,11 @@
-.mb-3{
-    background-color: #808080;
-}
-.m-16 {
-    height: 100%;
-    margin-right: 16px;
+
+.baa{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .img{
+        margin-right: 16px;
+        width: 60px;
+        height: 60px;
+    }
 }
