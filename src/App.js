@@ -8,6 +8,8 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Search from './search.js'
 import Home from './homepage.js'
+import Login from './login.js'
+import Signup from './signup.js'
 
 function App() {
   return (
@@ -32,10 +34,10 @@ function App() {
             </ul>
             
             <ul className="navbar__menu">
-              <li className="nav-item"><a className="nav-link" href="search.js">이용안내</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">고객센터</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">로그인</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">회원가입</a></li>
+            <li className="nav-item"><Link to="/"><a>이용안내</a></Link></li>
+              <li className="nav-item"><Link to="/"><a>고객센터</a></Link></li>
+              <li className="nav-item"><Link to="/login"><a>로그인</a></Link></li>
+              <li className="nav-item"><Link to="/signup"><a>회원가입</a></Link></li>
             </ul>
         </nav>
 
@@ -43,6 +45,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/search' element={<Search />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
         </Routes>
       </BrowserRouter>
 
