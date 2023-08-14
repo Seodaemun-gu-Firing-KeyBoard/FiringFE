@@ -1,0 +1,15 @@
+.navbar__menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+      
+  }
+  
+  .navbar__menu li {
+    padding: 5px 30px;
+  }
+@media screen and (max-width: 1598px) {
+    .navbar__menu{
+        display: none;
+    }
+}

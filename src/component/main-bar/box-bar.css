@@ -1,0 +1,11 @@
+.boxbar{
+    display: none;
+    /* position: absolute; */
+    justify-self: center;
+    right: 15px;
+}
+@media screen and (max-width: 1598px) {
+    .boxbar{
+      display: flex;
+    }
+  }
