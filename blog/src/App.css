@@ -1,0 +1,113 @@
+.App {
+  text-align: center;
+}
+
+.blog {
+  background-color: #61dafb;
+  display: flex;
+  color: white;
+  padding: 20px;
+  width: 100%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background: grey;
+}
+
+.navbar__logo{
+  flex-direction: column;
+  display: flex;
+  list-style: none;
+  text-align: center;
+  padding: 0px 0px;
+  white-space: pre-wrap;
+}
+
+.navbar__logo li {
+  padding: 0;
+}
+.navbar a{
+  text-decoration: none;
+  color: white;
+  width: 100px;
+  display: block;
+  padding: 10px 6px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+.navbar__menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+    
+}
+
+.navbar__menu li {
+  padding: 5px 30px;
+}
+
+.navbar__menu a:hover{
+  background: white;
+}
+
+.navbar__icons {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+/*하단바 요소*/
+#footer {
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  clear: left;
+  align-items: center;
+  background: #ffffff;
+  color: #333;
+}
