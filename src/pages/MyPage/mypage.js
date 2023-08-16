@@ -1,10 +1,5 @@
 import React , { useState} from 'react';
-import  data  from "../../data.json";
-import { useParams } from 'react-router-dom';
-import TabContent from '../../component/tab/TabContent';
-import {Nav} from 'react-bootstrap';
 import styled from 'styled-components';
-import AlwaysOpenExample from './accordion';
 import OffcanvasExample from '../../component/bar/bar';
 import './mypage.scss';
 import {Link, Routes ,Route} from 'react-router-dom';
@@ -71,5 +66,3 @@ function MyPage() {
     </>
   );
 }
-
-export default MyPage;
