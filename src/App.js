@@ -38,7 +38,6 @@ function App() {
         </Routes>
 =======
 import React from 'react';
-// import './App.scss';
 import { Route, Routes, BrowserRouter} from 'react-router-dom';
 import Locations from './pages/locaions';
 import Main from './main';
@@ -48,9 +47,11 @@ import Signup from './signup.js';
 import Search from './search.js';
 import Home from './homepage';
 
-import GymIconPage from './pages/IconPage/Gym.js';    
+import GymIconPage from './pages/IconPage/Gym.js';     
 import SpaceIconPage from './pages/IconPage/Space.js'; 
 import CultureIconPage from './pages/IconPage/Culture.js'; 
+import MyPage from './pages/MyPage/mypage';
+
 
 function App() {
   return (
@@ -61,10 +62,11 @@ function App() {
             <Route path="/p/*" element={<Locations/>} />
             <Route path='/search' element={<Search />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<Signup />} /> 
+            <Route path='/signup' element={<Signup />} />
             <Route path="/gym" element={<GymIconPage />} />     
             <Route path="/space" element={<SpaceIconPage />} /> 
             <Route path="/culture" element={<CultureIconPage />} /> 
+            <Route path='/mypage' element={<MyPage />} />
           </Routes>
 >>>>>>> f8f7e66 (채원 커밋)
       </div>
