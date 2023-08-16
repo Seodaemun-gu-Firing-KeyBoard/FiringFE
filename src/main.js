@@ -4,8 +4,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
-
 import { Link } from 'react-router-dom';
 import Home from './homepage.js'
 import ListBar from './component/main-bar/list-bar';

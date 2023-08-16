@@ -12,6 +12,7 @@ function ListBar() {
       <li className="nav-item"><Link to="/"><a>고객센터</a></Link></li>
       <li className="nav-item"><Link to="/login"><a>로그인</a></Link></li>
       <li className="nav-item"><Link to="/signup"><a>회원가입</a></Link></li>
+      <li className="nav-item"><Link to="/mypage"><a>마이페이지</a></Link></li>
     </ul>
    
   );
