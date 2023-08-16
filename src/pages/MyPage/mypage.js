@@ -6,6 +6,7 @@ import {Nav} from 'react-bootstrap';
 import styled from 'styled-components';
 import AlwaysOpenExample from './accordion';
 import OffcanvasExample from '../../component/bar/bar';
+import './mypage.scss';
 
 const Container = styled.div`
 //   height: 100vh;
@@ -22,7 +23,8 @@ const MyDiv = styled.div`
     width: 100%;
     // border: 2px #808080 solid;
     border-radius: 30px;
-    //padding: 60px;
+    padding: 60px;
+    padding-top : 30px;
 `;
 function MyPage() {
   // const params = useParams();
@@ -62,11 +64,11 @@ function MyPage() {
         <Container>
             <MyDiv>
               <div>
-                <h1 className='p1'>[마이 페이지]</h1>
+                <h1>[마이 페이지]</h1>
                 <div>
                   <div class="b_container">
-                    <button class="btn-1">Button 1</button>
-                    <button class="btn-2">Button 2</button>
+                    <button class="btn-1">내 정보</button>
+                    <button class="btn-2">내가 쓴 리뷰 보러가기</button>
                   </div>
                 </div>
               </div>

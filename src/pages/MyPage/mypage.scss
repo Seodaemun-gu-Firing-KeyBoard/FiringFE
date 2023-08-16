@@ -1,17 +1,20 @@
-.p1{
+h1{
     text-align: center;
+    // margin-bottom: 50px;
 }
 
 body {
-    background: #2ecc71;
+    background: white;
     font-size: 62.5%;
   }
 
 .b_container {
 padding: 2em;
 }
-
-/* GENERAL BUTTON STYLING */
+.btn-1,.btn-2{
+    width:50%;
+}
+/* BUTTON 1 */
 .btn-1,
 .btn-1::after {
 -webkit-transition: all 0.3s;
@@ -22,13 +25,13 @@ padding: 2em;
 
 .btn-1 {
 background: none;
-border: 3px solid #fff;
+border: 3px solid #EBDBC4;
 border-radius: 5px;
-color: #fff;
+color: #EBDBC4;
 display: block;
 font-size: 1.6em;
 font-weight: bold;
-margin: 1em auto;
+margin: 3em auto;
 padding: 2em 6em;
 position: relative;
 text-transform: uppercase;
@@ -36,17 +39,16 @@ text-transform: uppercase;
 
 .btn-1::before,
 .btn-1::after {
-background: #fff;
+background: #EBDBC4;
 content: '';
 position: absolute;
 z-index: -1;
 }
 
 .btn-1:hover {
-color: #2ecc71;
+color: white;
 }
 
-/* BUTTON 1 */
 .btn-1::after {
 height: 0;
 left: 0;
@@ -59,6 +61,40 @@ height: 100%;
 }
 
 /* BUTTON 2 */
+.btn-2,
+.btn-2::after {
+-webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+-o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-2 {
+background: none;
+border: 3px solid #EBDBC4;
+border-radius: 5px;
+color: #EBDBC4;
+display: block;
+font-size: 1.6em;
+font-weight: bold;
+margin: 3em auto;
+padding: 2em 6em;
+position: relative;
+text-transform: uppercase;
+}
+
+.btn-2::before,
+.btn-2::after {
+background: #EBDBC4;
+content: '';
+position: absolute;
+z-index: -1;
+}
+
+.btn-2:hover {
+color: white;
+}
+
 .btn-2::after {
 height: 100%;
 left: 0;
@@ -70,61 +106,3 @@ width: 0;
 width: 100%;
 }
 
-/* BUTTON 3 */
-.btn-3::after {
-height: 0;
-left: 50%;
-top: 50%;
-width: 0;
-}
-
-.btn-3:hover:after {
-height: 100%;
-left: 0;
-top: 0;
-width: 100%;
-}
-
-/* BUTTON 4 */
-.btn-4::before {
-height: 100%;
-left: 0;
-top: 0;
-width: 100%;
-}
-
-.btn-4::after {
-background: #2ecc71;
-height: 100%;
-left: 0;
-top: 0;
-width: 100%;
-}
-
-.btn-4:hover:after {
-height: 0;
-left: 50%;
-top: 50%;
-width: 0;
-}
-
-/* BUTTON 5 */
-.btn-5 {
-overflow: hidden;
-}
-
-.btn-5::after {
-/*background-color: #f00;*/
-height: 100%;
-left: -35%;
-top: 0;
-transform: skew(50deg);
-transition-duration: 0.6s;
-transform-origin: top left;
-width: 0;
-}
-
-.btn-5:hover:after {
-height: 100%;
-width: 135%;
-}
