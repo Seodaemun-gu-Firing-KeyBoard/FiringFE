@@ -8,6 +8,7 @@ import Login from './login.js';
 import Signup from './signup.js';
 import Search from './search.js';
 import Home from './homepage';
+import MyPage from './pages/MyPage/mypage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path='/search' element={<Search />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
+            <Route path='/mypage' element={<MyPage />} />
           </Routes>
       </div>
     </div>
