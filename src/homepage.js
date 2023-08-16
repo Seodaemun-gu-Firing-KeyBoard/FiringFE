@@ -66,7 +66,7 @@ function homepage() {
         <div class="container text-center">
             <div class="row">
                 <div class="col">
-                    <Link to="/p">
+                    <Link to="/gym">
                         <ul className="gym">
                             <img src="img/gym.png" />
                             <p>체육시설</p>
@@ -75,7 +75,7 @@ function homepage() {
                 </div>
 
                 <div class="col">
-                    <Link to="/p">
+                    <Link to="/space">
                         <ul className="space">
                             <img src="img/meething-room.png" />
                             <p>공간시설</p>
@@ -84,7 +84,7 @@ function homepage() {
                 </div>
 
                 <div class="col">
-                    <Link to="/Search">
+                    <Link to="/culture">
                         <ul className="culture">
                             <img src="img/theatre.png" />
                             <p>문화시설</p>
