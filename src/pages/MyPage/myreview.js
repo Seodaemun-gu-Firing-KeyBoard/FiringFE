@@ -1,17 +1,10 @@
-import { useState } from "react";
-import OffcanvasExample from "../../component/bar/bar";
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import { useState } from 'react';
+import Example from './MyModal';
 
-function MyReview() {
-    const [reviews,setReviews] = useState([
-        {
-            title : "좋아요",
-            text : "깨끗해여"
-        },
-        {
-            title : "굿",
-            text : "ㄱㄱ"
-        }
-      ]);
+function MyReview(props) {
+
     function reviewList(reviews) {
         return reviews.map((review,index) => {
            return (
@@ -23,14 +16,11 @@ function MyReview() {
         });
     };
   return (
-    <>  
-        <div id='searchbar'>
-            <OffcanvasExample />
-        </div>
+    <>
         <h1>리뷰 리스트</h1>
         <div>
             <ul>
-                {reviewList(reviews)}
+                {reviewList(props.reviews)}
             </ul>
         </div>
     </>

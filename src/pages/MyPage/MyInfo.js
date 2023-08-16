@@ -2,9 +2,8 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useState } from 'react';
 import Example from './MyModal';
-import OffcanvasExample from '../../component/bar/bar';
 
-function KitchenSinkExample() {
+function MyInfo() {
     const [ user, setUser ] = useState(
         {
             name:'chaewon',
@@ -13,10 +12,7 @@ function KitchenSinkExample() {
         }
     );
   return (
-    <>
-      <div id='searchbar'>
-            <OffcanvasExample />
-      </div>
+    <div>
       <Card style={{ width: '60%' }}>
         <Card.Img variant="top" src="/images/user/Rectangle.png" />
         <Card.Body>
@@ -35,9 +31,9 @@ function KitchenSinkExample() {
           <Example/>
         </Card.Body>
       </Card>
-    </>
+    </div>
     
   );
 }
 
-export default KitchenSinkExample;
+export default MyInfo;

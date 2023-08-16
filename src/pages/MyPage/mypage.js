@@ -2,7 +2,9 @@ import React , { useState} from 'react';
 import styled from 'styled-components';
 import OffcanvasExample from '../../component/bar/bar';
 import './mypage.scss';
-import {Link} from 'react-router-dom';
+import {Link, Routes ,Route} from 'react-router-dom';
+import MyInfo from './MyInfo';
+import MyReview from './myreview';
 
 const Container = styled.div`
 //   height: 100vh;
@@ -23,6 +25,16 @@ const MyDiv = styled.div`
     padding-top : 30px;
 `;
 function MyPage() {
+  const [reviews,setReviews] = useState([
+    {
+        title : "좋아요",
+        text : "깨끗해여"
+    },
+    {
+        title : "굿",
+        text : "ㄱㄱ"
+    }
+  ]);
   return(
     <>  
         <div id='searchbar'>
@@ -34,11 +46,12 @@ function MyPage() {
                 <h1>[마이 페이지]</h1>
                 <div>
                   <div class="b_container">
-                    <Link to='/myinfo'>
-                        <button class="btn-1">내 정보</button>
+                    <Link to='/mypage/myinfo'>
+                      <button class="btn-1">내 정보</button>
                     </Link>
-                    <Link to='/myreview'>
-                        <button class="btn-2">내가 쓴 리뷰 보러가기</button>
+                    
+                    <Link to='/mypage/myreview'>
+                      <button class="btn-2">내가 쓴 리뷰 보러가기</button>
                     </Link>
                   </div>
                 </div>
@@ -46,8 +59,10 @@ function MyPage() {
             </MyDiv>
         </Container>
       
+      <Routes> 
+        <Route path='/mypage/myinfo' element={<MyInfo/>} />
+        <Route path='/mypage/myreview' element={<MyReview reviews={reviews}/>}/>
+      </Routes>
     </>
   );
 }
-
-export default MyPage;

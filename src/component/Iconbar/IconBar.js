@@ -27,14 +27,12 @@ function OffcanvasExample() {
               <Link to="/">
                 <ul className="navbar__logo">
                   <img src="/img/logo.png" />
-                </ul>
-              </Link>
-              <div className="text-center"> {/* 중앙 정렬 */}
-                <h2>{currentPage}</h2> {/* currentPage에 따라 내용 변경 */}
-              </div>
-              {/* <Navbar.Brand href="/">공공시설 예약 서비스</Navbar.Brand> */}
+                </ul></Link>
+              <Navbar.Brand href="/">공공시설 예약 서비스</Navbar.Brand>
             </div>
-            
+            <div className="text-center"> {/* 중앙 정렬 */}
+              <h2>{currentPage}</h2> {/* currentPage에 따라 내용 변경 */}
+            </div>
 
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
