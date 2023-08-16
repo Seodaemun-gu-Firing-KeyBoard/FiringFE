@@ -11,6 +11,7 @@ import Home from './homepage';
 import GymIconPage from './pages/IconPage/Gym.js';     
 import SpaceIconPage from './pages/IconPage/Space.js'; 
 import CultureIconPage from './pages/IconPage/Culture.js'; 
+
 import MyPage from './pages/MyPage/mypage';
 import MyInfo from './pages/MyPage/MyInfo';
 import MyReview from './pages/MyPage/myreview';
