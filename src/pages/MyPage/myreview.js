@@ -1,6 +1,7 @@
 import { useState } from "react";
+import OffcanvasExample from "../../component/bar/bar";
 
-function MyReview(props) {
+function MyReview() {
     const [reviews,setReviews] = useState([
         {
             title : "좋아요",
@@ -22,7 +23,10 @@ function MyReview(props) {
         });
     };
   return (
-    <>
+    <>  
+        <div id='searchbar'>
+            <OffcanvasExample />
+        </div>
         <h1>리뷰 리스트</h1>
         <div>
             <ul>

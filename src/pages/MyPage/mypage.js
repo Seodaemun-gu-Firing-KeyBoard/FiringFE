@@ -1,12 +1,8 @@
 import React , { useState} from 'react';
-import  data  from "../../data.json";
-import { useParams } from 'react-router-dom';
-import TabContent from '../../component/tab/TabContent';
-import {Nav} from 'react-bootstrap';
 import styled from 'styled-components';
-import AlwaysOpenExample from './accordion';
 import OffcanvasExample from '../../component/bar/bar';
 import './mypage.scss';
+import {Link} from 'react-router-dom';
 
 const Container = styled.div`
 //   height: 100vh;
@@ -27,35 +23,6 @@ const MyDiv = styled.div`
     padding-top : 30px;
 `;
 function MyPage() {
-  // const params = useParams();
-  // const location = data.locs[params.id - 1];
-  const [ user, setUser ] = useState(
-    {
-        name:'chaewon',
-        nickname:'cw02',
-        email:'glgl246@naver.com',
-    }
-  );
-  const [reviews,setReviews] = useState([
-    {
-        title : "좋아요",
-        text : "깨끗해여"
-    },
-    {
-        title : "굿",
-        text : "ㄱㄱ"
-    }
-  ]);
-  function reviewList(reviews) {
-      return reviews.map((review,index) => {
-        return (
-              <li key={index}>
-                  <div>{review.title}</div>
-                  <div>{review.text}</div>
-              </li>
-        );
-      });
-  };
   return(
     <>  
         <div id='searchbar'>
@@ -67,8 +34,12 @@ function MyPage() {
                 <h1>[마이 페이지]</h1>
                 <div>
                   <div class="b_container">
-                    <button class="btn-1">내 정보</button>
-                    <button class="btn-2">내가 쓴 리뷰 보러가기</button>
+                    <Link to='/myinfo'>
+                        <button class="btn-1">내 정보</button>
+                    </Link>
+                    <Link to='/myreview'>
+                        <button class="btn-2">내가 쓴 리뷰 보러가기</button>
+                    </Link>
                   </div>
                 </div>
               </div>
