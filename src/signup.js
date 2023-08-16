@@ -35,7 +35,7 @@ function signup() {
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5" sx={{ mb:6 }}>
+          <Typography component="h1" variant="h5" sx={{ mb: 2}}>
             회원가입
           </Typography>
           <Grid container spacing={2}>
