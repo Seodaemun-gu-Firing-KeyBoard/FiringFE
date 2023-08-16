@@ -46,6 +46,10 @@ function MyPage() {
             </MyDiv>
         </Container>
       
+      <Routes> 
+        <Route path='/mypage/myinfo' element={<MyInfo/>} />
+        <Route path='/mypage/myreview' element={<MyReview reviews={reviews}/>}/>
+      </Routes>
     </>
   );
 }
