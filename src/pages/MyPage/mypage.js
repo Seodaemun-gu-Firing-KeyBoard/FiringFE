@@ -7,6 +7,9 @@ import styled from 'styled-components';
 import AlwaysOpenExample from './accordion';
 import OffcanvasExample from '../../component/bar/bar';
 import './mypage.scss';
+import {Link, Routes ,Route} from 'react-router-dom';
+import MyInfo from './MyInfo';
+import MyReview from './myreview';
 
 const Container = styled.div`
 //   height: 100vh;
@@ -27,15 +30,6 @@ const MyDiv = styled.div`
     padding-top : 30px;
 `;
 function MyPage() {
-  // const params = useParams();
-  // const location = data.locs[params.id - 1];
-  const [ user, setUser ] = useState(
-    {
-        name:'chaewon',
-        nickname:'cw02',
-        email:'glgl246@naver.com',
-    }
-  );
   const [reviews,setReviews] = useState([
     {
         title : "좋아요",
@@ -46,16 +40,6 @@ function MyPage() {
         text : "ㄱㄱ"
     }
   ]);
-  function reviewList(reviews) {
-      return reviews.map((review,index) => {
-        return (
-              <li key={index}>
-                  <div>{review.title}</div>
-                  <div>{review.text}</div>
-              </li>
-        );
-      });
-  };
   return(
     <>  
         <div id='searchbar'>
@@ -67,14 +51,23 @@ function MyPage() {
                 <h1>[마이 페이지]</h1>
                 <div>
                   <div class="b_container">
-                    <button class="btn-1">내 정보</button>
-                    <button class="btn-2">내가 쓴 리뷰 보러가기</button>
+                    <Link to='/mypage/myinfo'>
+                      <button class="btn-1">내 정보</button>
+                    </Link>
+                    
+                    <Link to='/mypage/myreview'>
+                      <button class="btn-2">내가 쓴 리뷰 보러가기</button>
+                    </Link>
                   </div>
                 </div>
               </div>
             </MyDiv>
         </Container>
       
+      <Routes> 
+        <Route path='/mypage/myinfo' element={<MyInfo/>} />
+        <Route path='/mypage/myreview' element={<MyReview reviews={reviews}/>}/>
+      </Routes>
     </>
   );
 }
