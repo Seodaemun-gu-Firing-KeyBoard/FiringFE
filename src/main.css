@@ -156,7 +156,7 @@
   
   /* 홈 */
   .slidercontents {
-    /* background-image: url(/Users/goyeongmin/Desktop/Firing/blog/public/img/soccer.jpg); */
+    background-image: url( "img/soccer.jpg" ); 
     height: 480px;
     background-repeat: no-repeat;
     background-position: center;
@@ -167,7 +167,7 @@
   }
   
   .slidercontents2 {
-    /* background-image: url(/Users/goyeongmin/Desktop/Firing/blog/public/img/meeting.jpeg); */
+    background-image: url("img/meeting.jpeg");
     height: 480px;
     background-repeat: no-repeat;
     background-position: center;
@@ -177,7 +177,7 @@
   }
   
   .slidercontents3 {
-    /* background-image: url(/Users/goyeongmin/Desktop/Firing/blog/public/img/doja.jpeg); */
+    background-image: url("img/doja.jpeg"); 
     height: 480px;
     background-repeat: no-repeat;
     background-position: center;
