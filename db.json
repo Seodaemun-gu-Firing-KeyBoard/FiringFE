@@ -25,35 +25,42 @@
       "user_id": 1,
       "title": "aa",
       "text": "dd",
-      "loc_id" : 1
+      "loc_id": 1
     },
     {
       "title": "ㅌ",
       "text": "ㅋ",
       "id": 2,
       "user_id": 2,
-      "loc_id" : 1
+      "loc_id": 1
     },
     {
       "title": "3",
       "text": "3",
       "id": 3,
       "user_id": 2,
-      "loc_id" : 1
+      "loc_id": 1
     },
     {
       "title": "ㄴ",
       "text": "ㄴ",
       "id": 4,
       "user_id": 2,
-      "loc_id" : 2
+      "loc_id": 2
     },
     {
       "title": "ㅋ",
       "text": "ㅋㅋㅋ",
       "user_id": 2,
       "id": 5,
-      "loc_id" : 2
+      "loc_id": 2
+    },
+    {
+      "title": "안녕",
+      "text": "안녕",
+      "user_id": 2,
+      "loc_id": 1,
+      "id": 6
     }
   ]
 }

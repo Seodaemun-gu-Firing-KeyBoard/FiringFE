@@ -5,7 +5,6 @@ import axios from 'axios';
 
 //axios post 하는 곳,, user_id 임의로 설정 해둠!
 function NoteRaw (props) {
-    const user_id = 2;
     const [ state, setState ] = useState(
         {
             title:'',
@@ -46,13 +45,14 @@ function NoteRaw (props) {
             title : state.title,
             text : state.text,
             user_id : user_id,
+            loc_id : props.loc_id
           })
           .then(response => response.data ) 
           .catch(e => {  // API 호출이 실패한 경우
             console.error(e);  // 에러표시
           });
       };
-      
+
     const execute = () => {
         props.action(state.title, state.text, props.noteNum);
         postNotes();
