@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import data from '../../data.json';
 import Info from './info';
 
-function WithHeaderExample() {
+function WithHeaderExample({loc_id}) {
   const params = useParams();
   const location = data.locs[params.id - 1];
 
@@ -18,7 +18,9 @@ function WithHeaderExample() {
           </p>
         </Card.Text>
         <div id='btn' >
-          <button id='a'>예약하러 가기</button>
+          <a href={`https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?rsv_svc_id=${loc_id}&reSvc=Y`}>
+            <button id='a'>예약하러 가기</button>
+          </a>
         </div>
       </Card.Body>
     </Card>
