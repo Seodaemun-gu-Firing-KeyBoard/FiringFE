@@ -4,12 +4,23 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import './MyModal.scss';
 
-function Example() {
+function Example(props) {
   const [show, setShow] = useState(false);
+  // const [nickname, setNickname] = useState(props);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const changeNickname = (e) => {
+    const value = e.target;
+    
+  };
+//   const onChange = e =>{
+//     const {value,name} = e.target;
+//     setState({
+//         ...state,
+//         [name]: value
+//     });
+// };
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -26,7 +37,9 @@ function Example() {
               <Form.Label>새로운 닉네임</Form.Label>
               <Form.Control
                 type="text"
+                onChange={changeNickname}
                 placeholder="새로운 닉네임을 입력해 주세요."
+                value={props.nickname}
               />
             </Form.Group>
             {/* <Form.Group

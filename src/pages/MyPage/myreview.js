@@ -19,11 +19,11 @@ function MyReview() {
         return reviews.map((review,index) =>{   
             if (review.user_id === user_id)
                 return (
-                        <ListGroup.Item key={index}>
-                            <div>{index+1}</div>
-                            <div>title : {review.title}</div>
-                            <div>text : {review.text}</div>
-                        </ListGroup.Item>
+                    <ListGroup.Item key={index}>
+                        <div>{index+1}</div>
+                        <div>title : {review.title}</div>
+                        <div>text : {review.text}</div>
+                    </ListGroup.Item>
                 );
         });
     };
@@ -33,11 +33,9 @@ function MyReview() {
         <div id='searchbar'>
             <OffcanvasExample />
         </div>
-        <h1>리뷰 리스트</h1>
+        <h1>리뷰 작성 내역</h1>
         <ListGroup variant="flush">
-            <ul>
                 {reviewList(reviews)}
-            </ul>
         </ListGroup>
     </>
   );
