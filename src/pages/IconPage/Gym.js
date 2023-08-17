@@ -11,11 +11,11 @@ function GymPage() {
       <OffcanvasExample />
       <div className="map-container">
         <div className="map-box">
-          <MapComponent />
+          <MapComponent facilityType={100} />
         </div>
       </div>
       <div className="place-list">
-        <FacilityList />
+        <FacilityList facilityType={100} />
       </div>
     </div>
   );
