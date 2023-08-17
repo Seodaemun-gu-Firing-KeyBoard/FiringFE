@@ -44,6 +44,7 @@ class Review extends Component{
     state = {
         notes: [],
         modalToogle : false,
+        loc_id : 1
     };
 
     loadNotes = async () => {
@@ -58,16 +59,6 @@ class Review extends Component{
           console.error(e);  // 에러표시
         });
     };
-
-    // useEffect(() =>{
-    //   async function fetchData(){
-    //   const result = await axios.get('https://api.yebalja.com/api/json/program'
-    //   ,);
-    //   console.log(result.data);
-    //   }
-    //   fetchData();
-    // },[]);
-      
 
       toogleModal = () => {
         this.setState({
@@ -118,7 +109,8 @@ class Review extends Component{
                     <NoteList 
                       notes={notes}
                       changeNote={this.changeNote} 
-                      deleteNote={this.deleteNote} 
+                      deleteNote={this.deleteNote}
+                      loc_id={this.state.loc_id} 
                     />
                 </AppDiv>
             </Container>
