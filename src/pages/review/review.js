@@ -2,8 +2,10 @@ import React,{Component} from "react";
 import styled from 'styled-components';
 import NoteList from "./component_/note-list/note-list";
 import ModalPage from './component_/modal/modal';
-//import ModalContainer from "./component_/modal/modalcontainer";
 import NoteRaw from './component_/note-raw/note-raw';
+import axios from 'axios';
+
+
 const Container = styled.div`
   height: 820px;
   display: flex;
@@ -25,7 +27,7 @@ const SearchBar = styled.div`
   div > button {
     font-size: 1.2rem;
     border-radius: 0.5rem;
-    border: 1px solid transparent;
+    border: 1px solid #7fccde;
     outline: none;
     padding: 0.5rem;
     transition: 0.25s;
@@ -40,12 +42,32 @@ const SearchBar = styled.div`
 `;
 class Review extends Component{
     state = {
-        notes: [
-          // {date:new Date(),text:'1',title:'dd',edited:false},
-          // {date:new Date(),text:'2',title:'vv',edited:false}
-        ],
-        modalToogle : false
-      };
+        notes: [],
+        modalToogle : false,
+    };
+
+    loadNotes = async () => {
+      axios
+        .get("http://localhost:3005/notes")
+        .then(({ data }) => {
+          this.setState({ 
+            notes: data
+          });
+        })
+        .catch(e => {  // API 호출이 실패한 경우
+          console.error(e);  // 에러표시
+        });
+    };
+
+    // useEffect(() =>{
+    //   async function fetchData(){
+    //   const result = await axios.get('https://api.yebalja.com/api/json/program'
+    //   ,);
+    //   console.log(result.data);
+    //   }
+    //   fetchData();
+    // },[]);
+      
 
       toogleModal = () => {
         this.setState({
@@ -68,8 +90,14 @@ class Review extends Component{
           notes : this.state.notes.filter((note,index)=>(index===number ? false : true))
         });
       };
+    componentDidMount(){
+      this.loadNotes();
+    }
 
     render(){
+      const { notes } = this.state;
+      console.log(notes);
+      
         return(
             <Container>
                 {this.state.modalToogle && (
@@ -88,7 +116,7 @@ class Review extends Component{
                         </div>
                     </SearchBar>
                     <NoteList 
-                      notes={this.state.notes}
+                      notes={notes}
                       changeNote={this.changeNote} 
                       deleteNote={this.deleteNote} 
                     />
