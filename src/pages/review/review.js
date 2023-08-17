@@ -50,6 +50,7 @@ class Review extends Component{
     };
     //리뷰data 다 가져오고 장소에 대한 필터링은 note.js에서!
     //근데 작성하기 누르면 정보가 잘 가는데 새로고침해야 get을 다시 해옴 . 처음에 한번만 함
+    //해결(?) - 리로드 !
     loadNotes = async () => {
       axios
         .get("http://localhost:3005/notes")
@@ -90,7 +91,7 @@ class Review extends Component{
 
     render(){
       const { notes } = this.state;
-      console.log('리뷰js'+JSON.stringify(notes));
+      // console.log('리뷰js'+JSON.stringify(notes));
       // console.log(notes[0]);
         return(
             <Container>

@@ -10,7 +10,7 @@ import OffcanvasExample from '../../component/bar/bar';
 function LocationPage() {
   const params = useParams();
   const location = data.locs[params.id - 1];
-
+  let loc_id = '230817193452826177'; //임의로 지정. 원래는 장소data에 속해 있어야 함.
   let [clickedTab, setClickedTab] = useState(0);
 
   return(
@@ -26,7 +26,7 @@ function LocationPage() {
             />
           </div>
           <div className='container-sm' id='second'>
-            <WithHeaderExample/>
+            <WithHeaderExample loc_id={loc_id}/>
           </div>
         </div>
         <div id='buttons'>
