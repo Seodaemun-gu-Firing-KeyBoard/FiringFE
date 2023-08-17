@@ -2,11 +2,13 @@ import React  from "react";
 import './note-raw.scss';
 import { useState, useEffect } from "react";
 import axios from 'axios';
+import NoteList from "../note-list/note-list";
 
 //axios post 하는 곳,, user_id 임의로 설정 해둠!
 function NoteRaw (props) {
     const [ state, setState ] = useState(
-        {
+        {   
+
             title:'',
             text:'',
             subject:'후기작성',
@@ -25,10 +27,10 @@ function NoteRaw (props) {
             text: props.text,
         })
         console.log('렌더링이 완료되었습니다!');
-        console.log({
-          title,
-          text,
-        });
+        // console.log({
+        //   title,
+        //   text,
+        // });
       }, []);
 
     const onChange = e =>{
@@ -88,6 +90,7 @@ function NoteRaw (props) {
             <div id="add-or-change-note-button">
                 <button onClick={execute}>작성하기</button>
             </div>
+            
         </>
     )
 
