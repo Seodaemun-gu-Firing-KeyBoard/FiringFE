@@ -1,0 +1,38 @@
+{
+    "token": {
+      "access_token": "9k3kljnslkdj_34lk2j34lks09sv",
+      "userId": 123
+    },
+    "notes": [
+      {
+        "id": 1,
+        "title": "aa",
+        "text": "dd"
+      },
+      {
+        "title": "ㅌ",
+        "text": "ㅋ",
+        "id": 2
+      },
+      {
+        "title": "3",
+        "text": "3",
+        "id": 3
+      },
+      {
+        "title": "ㄴ",
+        "text": "ㄴ",
+        "id": 4
+      }
+    ],
+    "user":[
+      {
+          "id": 1,
+          "name": "chaewon",
+          "text": "cw02",
+          "email": "glgl246@naver.com",
+          "img": "/images/user/Rectangle.png"
+        }
+    ]
+    
+  }
