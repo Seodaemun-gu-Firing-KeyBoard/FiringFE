@@ -90,14 +90,20 @@ class Review extends Component{
 
     render(){
       const { notes } = this.state;
-      console.log(notes);
-      
+      console.log('리뷰js'+JSON.stringify(notes));
+      // console.log(notes[0]);
         return(
             <Container>
                 {this.state.modalToogle && (
                     <ModalPage>
-                          <NoteRaw action={this.createNote} close={this.toogleModal} 
-                          loc_id={this.state.loc_id} user_id ={this.state.user_id}
+                          <NoteRaw action={this.createNote} 
+                                  close={this.toogleModal} 
+                                  loc_id={this.state.loc_id}
+                                  user_id ={this.state.user_id} 
+                                  notes={notes}
+                                  loadNotes={this.loadNotes}
+                                  changeNote={this.changeNote}
+                                  deleteNote={this.deleteNote}
                           />
                     </ModalPage>
                 )}

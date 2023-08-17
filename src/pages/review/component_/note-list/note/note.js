@@ -27,15 +27,15 @@ class Note extends Component{
             showDeleteModal: !this.state.showDeleteModal
         });
     };
-
+    
     render = () => (
         <div id="note">
             <div id="note-menu">
                 <span>{this.props.title}</span>
                 <span>
-                    <span id="showChangeModal" onClick={this.changeEditToogle}>
+                    {/* <span id="showChangeModal" onClick={this.changeEditToogle}>
                         편집
-                    </span>
+                    </span> */}
                     <span id="showDeleteModal" onClick={this.chageDeleteToogle}>
                         삭제
                     </span>
@@ -48,7 +48,7 @@ class Note extends Component{
                 </span>
             </div>
             <div>{this.props.text}</div>
-
+            {console.log(this.props.id)}
             {this.state.showEitModal && (
                 <ModalPage>
                     <NoteRaw
@@ -59,6 +59,10 @@ class Note extends Component{
                         subject={'후기 수정'}
                         title = {this.props.title}
                         text = {this.props.text}
+                        user_id={this.props.user_id}
+                        loc_id={this.props.loc_id}
+                        id={this.props.id}
+
                     />
                 </ModalPage>
             )}
@@ -74,6 +78,7 @@ class Note extends Component{
                         action={this.props.deleteNote}
                         title={this.props.title}
                         close={this.chageDeleteToogle}
+                        id={this.props.id}
                     />
                 </ModalPage>
             )}
