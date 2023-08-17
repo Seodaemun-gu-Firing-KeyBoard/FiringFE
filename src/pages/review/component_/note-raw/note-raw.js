@@ -44,7 +44,7 @@ function NoteRaw (props) {
           .post("http://localhost:3005/notes",{
             title : state.title,
             text : state.text,
-            user_id : user_id,
+            user_id : props.user_id,
             loc_id : props.loc_id
           })
           .then(response => response.data ) 
