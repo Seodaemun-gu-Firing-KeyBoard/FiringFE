@@ -22,7 +22,7 @@ class NoteList extends Component{
                             edited={note.edited}
                             changeNote={this.props.changeNote}
                             deleteNote={this.props.deleteNote}
-                            id={note.id}
+                            id={note.id} //위 인덱스랑 note.id는 다른 것!!
                         />
                     );
             });
