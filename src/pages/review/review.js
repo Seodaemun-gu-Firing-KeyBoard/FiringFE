@@ -44,8 +44,12 @@ class Review extends Component{
     state = {
         notes: [],
         modalToogle : false,
+        //임의로 loc_id 설정
+        loc_id : 1,
+        user_id :2
     };
-
+    //리뷰data 다 가져오고 장소에 대한 필터링은 note.js에서!
+    //근데 작성하기 누르면 정보가 잘 가는데 새로고침해야 get을 다시 해옴 . 처음에 한번만 함
     loadNotes = async () => {
       axios
         .get("http://localhost:3005/notes")
@@ -58,16 +62,6 @@ class Review extends Component{
           console.error(e);  // 에러표시
         });
     };
-
-    // useEffect(() =>{
-    //   async function fetchData(){
-    //   const result = await axios.get('https://api.yebalja.com/api/json/program'
-    //   ,);
-    //   console.log(result.data);
-    //   }
-    //   fetchData();
-    // },[]);
-      
 
       toogleModal = () => {
         this.setState({
@@ -102,7 +96,9 @@ class Review extends Component{
             <Container>
                 {this.state.modalToogle && (
                     <ModalPage>
-                          <NoteRaw action={this.createNote} close={this.toogleModal} />
+                          <NoteRaw action={this.createNote} close={this.toogleModal} 
+                          loc_id={this.state.loc_id} user_id ={this.state.user_id}
+                          />
                     </ModalPage>
                 )}
                 <AppDiv id="app">
@@ -118,7 +114,8 @@ class Review extends Component{
                     <NoteList 
                       notes={notes}
                       changeNote={this.changeNote} 
-                      deleteNote={this.deleteNote} 
+                      deleteNote={this.deleteNote}
+                      loc_id={this.state.loc_id} 
                     />
                 </AppDiv>
             </Container>
