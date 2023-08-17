@@ -1,38 +1,49 @@
 {
-    "token": {
-      "access_token": "9k3kljnslkdj_34lk2j34lks09sv",
-      "userId": 123
-    },
+    "Users" :{
+      "user":[
+          {
+              "id": 1,
+              "user_id" : 1,
+              "name": "chaewon",
+              "text": "cw02",
+              "email": "glgl246@naver.com",
+              "img": "/images/user/Rectangle.png"
+            },
+            {
+              "id": 2,
+              "user_id" : 2,
+              "name": "dddd",
+              "text": "cw02",
+              "email": "glgl246@naver.com",
+              "img": "/images/user/Rectangle.png"
+            }
+        ]
+      },
     "notes": [
       {
         "id": 1,
+        "user_id" : 1,
         "title": "aa",
         "text": "dd"
       },
       {
         "title": "ㅌ",
         "text": "ㅋ",
-        "id": 2
+        "id": 2,
+        "user_id" : 2
       },
       {
         "title": "3",
         "text": "3",
-        "id": 3
+        "id": 3,
+        "user_id" : 2
       },
       {
         "title": "ㄴ",
         "text": "ㄴ",
-        "id": 4
+        "id": 4,
+        "user_id" : 2
       }
-    ],
-    "user":[
-      {
-          "id": 1,
-          "name": "chaewon",
-          "text": "cw02",
-          "email": "glgl246@naver.com",
-          "img": "/images/user/Rectangle.png"
-        }
     ]
     
   }

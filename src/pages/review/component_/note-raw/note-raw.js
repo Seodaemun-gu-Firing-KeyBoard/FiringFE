@@ -36,16 +36,10 @@ function NoteRaw (props) {
             [name]: value
         });
     };
-    // const changeText = e =>{
-    //     const {value,name} = e.target;
-    //     setState({
-    //         ...state,
-    //         [name]: value
-    //     });
-    // };
 
     const execute = () => {
         props.action(state.title, state.text, props.noteNum);
+        
         props.close();
     };
 
