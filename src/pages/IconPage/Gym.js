@@ -1,6 +1,7 @@
 import React from 'react';
 import OffcanvasExample from '../../component/Iconbar/IconBar';
 import './Gym.css';
+import data from '../../data.json';
 function GymPage() {
     return (
         <div>
@@ -20,17 +21,14 @@ function GymPage() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>체육관 1</td>
-                            <td>서울시 강남구</td>
-                            <td>02-123-4567</td>
+                        {data.locs.map((place) => (
+                            <tr key={place.id}>
+                            <td>{place.name}</td>
+                            <td>{place.method}</td>
+                            <td>{place.info}</td>
                         </tr>
-                        <tr>
-                            <td>체육관 2</td>
-                            <td>서울시 종로구</td>
-                            <td>02-987-6543</td>
-                        </tr>
-                        {/* 다른 장소 정보도 추가 가능 */}
+                        
+                        ))}
                     </tbody>
                 </table>
             </div>
