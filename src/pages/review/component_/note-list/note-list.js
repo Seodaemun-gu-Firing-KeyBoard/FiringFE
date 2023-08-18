@@ -12,18 +12,19 @@ class NoteList extends Component{
         const notelistReturn = notes => {
             return notes.map((note,index) => {
                 if(note.loc_id==this.props.loc_id)
-                return (
-                    <Note 
-                        key={index} 
-                        noteNum={index} 
-                        title={note.title} 
-                        text={note.text} 
-                        date={note.date} 
-                        edited={note.edited}
-                        changeNote={this.props.changeNote}
-                        deleteNote={this.props.deleteNote}
-                    />
-                );
+                    return (
+                        <Note 
+                            key={index} 
+                            noteNum={index} 
+                            title={note.title} 
+                            text={note.text} 
+                            date={note.date} 
+                            edited={note.edited}
+                            changeNote={this.props.changeNote}
+                            deleteNote={this.props.deleteNote}
+                            id={note.id} //위 인덱스랑 note.id는 다른 것!!
+                        />
+                    );
             });
         };
         

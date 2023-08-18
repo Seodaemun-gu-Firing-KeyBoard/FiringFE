@@ -16,6 +16,7 @@ import MyInfo from "./pages/MyPage/MyInfo";
 import MyReview from "./pages/MyPage/myreview";
 import FacilityDetail from "./component/facility/FacilityDetail";
 import SearchComponent from "./component/search/SearchComponent";
+import InformationUse from "./pages/InformationUse/InformationUse.js";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/myreview" element={<MyReview />} />
           <Route path="/facility/:id" element={<FacilityDetail />} />
           <Route path="/searchFacility" element={<SearchComponent />} />
+          <Route path="/n=InformationUse" element={<InformationUse />} />
         </Routes>
       </div>
     </div>

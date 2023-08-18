@@ -1,7 +1,6 @@
 .facility-list-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .filter-box {
@@ -24,27 +23,49 @@
 
 .facility-boxes {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
-  margin-top: 20px;
 }
 
 .facility-box {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
   border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
   text-decoration: none;
   color: #333;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.facility-box:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-5px);
 }
 
 .selected {
   background-color: #333; /* 바뀌는 스타일을 여기에 정의 */
   color: white;
 }
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 16px;
+  color: #777;
+  margin: 0;
+}
+
+.facility-box:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* .facility-info {
+  margin-top: 10px;
+} */

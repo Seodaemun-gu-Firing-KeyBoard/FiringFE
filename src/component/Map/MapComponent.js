@@ -106,7 +106,7 @@ function MapComponent({ facilityType }) {
   return (
     <div>
       <button onClick={handleCurrentLocationClick}>현재위치 보기</button>
-      <div id="map" style={{ width: "1000px", height: "1000px" }}></div>
+      <div id="map" style={{ width: "600px", height: "600px" }}></div>
     </div>
   );
 }

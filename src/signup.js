@@ -1,110 +1,117 @@
-import logo from "./logo.svg";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Link, useNavigate } from "react-router-dom";
+import "./signup.css"; // 회원가입 페이지의 CSS 파일
+import axios from "axios";
+import { useState } from "react";
+import { SuccessModal, ErrorModal } from "./joinmodal"; // 모달 컴포넌트 경로
 
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+const SignUpPage = () => {
+  const navigator = useNavigate();
+  const [formData, setFormData] = useState({});
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+  const [isFormValid, setIsFormValid] = useState(false);
 
-function signup() {
+  const signUp = () => {
+    if (isFormValid) {
+      axios
+        .post("http://127.0.0.1:8000/signup/", formData) // 회원가입 API 엔드포인트
+        .then((response) => {
+          console.log(response.data);
+          setShowSuccessModal(true);
+          setShowErrorModal(false);
+        })
+        .catch((error) => {
+          console.error(error);
+          setShowSuccessModal(false);
+          setShowErrorModal(true);
+          setErrorMessage("회원가입에 실패했습니다.");
+        });
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+
+    const isEmailValid =
+      /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/i.test(formData.email);
+    const isPasswordValid = formData.password && formData.password.length >= 8;
+    // 추가 필드의 유효성 검사를 수행할 수 있습니다.
+
+    setIsFormValid(isEmailValid && isPasswordValid);
+  };
+
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <Box
-        sx={{
-          marginTop: 8,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5" sx={{ mb: 2 }}>
-          회원가입
-        </Typography>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              autoComplete="given-name"
-              name="Name"
-              required
-              fullWidth
-              id="Name"
-              label="이름"
-              autoFocus
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              fullWidth
-              id="NickName"
-              label="닉네임"
-              name="NickName"
-              autoComplete="family-name"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              required
-              fullWidth
-              id="email"
-              label="이메일"
-              name="email"
-              autoComplete="email"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              required
-              fullWidth
-              name="password"
-              label="비밀번호 입력"
-              type="password"
-              id="password"
-              autoComplete="new-password"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <FormControlLabel
-              control={<Checkbox value="allowExtraEmails" color="primary" />}
-              label="이메일을 통해 마케팅 홍보 및 업데이트를 받기"
-            />
-          </Grid>
-        </Grid>
-        <Button
-          type="submit"
-          fullWidth
-          variant="contained"
-          sx={{ mt: 3, mb: 2 }}
-        >
-          회원가입 완료
-        </Button>
-        <Grid container justifyContent="flex-end">
-          <Grid item>
-            <Link to="/login" variant="body2">
-              로그인
-            </Link>
-          </Grid>
-        </Grid>
-      </Box>
-    </Container>
-  );
-}
+    <div className="SU-background">
+      <div className="SU-container">
+        <Link to={"/"} className="SU-container-logo">
+          공공시설 예약서비스
+        </Link>
 
-export default signup;
+        <form className="SU-container-form" onSubmit={signUp}>
+          <div className="SU-container-form-input-text">이름</div>
+          <input
+            className="SU-container-form-input"
+            placeholder=" 이름 입력"
+            name="name"
+            value={formData.name || ""}
+            onChange={handleChange}
+          />
+
+          <div className="SU-container-form-input-text">닉네임</div>
+          <input
+            className="SU-container-form-input"
+            placeholder=" 닉네임 입력"
+            name="nickname"
+            value={formData.nickname || ""}
+            onChange={handleChange}
+          />
+
+          <div className="SU-container-form-input-text">이메일</div>
+          <input
+            className="SU-container-form-input"
+            placeholder=" 이메일 주소 입력"
+            name="email"
+            value={formData.email || ""}
+            onChange={handleChange}
+          />
+
+          <div className="SU-container-form-input-text">비밀번호</div>
+          <input
+            type="password"
+            className="SU-container-form-input"
+            placeholder=" 비밀번호 입력 (최소 8자)"
+            name="password"
+            value={formData.password || ""}
+            onChange={handleChange}
+          />
+
+          <button
+            type="submit"
+            className={`SU-container-form-signUpButton ${
+              !isFormValid
+                ? "SU-container-form-signUpButton-unActive"
+                : "SU-container-form-signUpButton-active"
+            }`}
+          >
+            회원가입
+          </button>
+        </form>
+      </div>
+
+      {showSuccessModal && (
+        <SuccessModal onClose={() => setShowSuccessModal(false)} />
+      )}
+      {showErrorModal && (
+        <ErrorModal
+          onClose={() => setShowErrorModal(false)}
+          errorMessage={errorMessage}
+        />
+      )}
+    </div>
+  );
+};
+
+export default SignUpPage;

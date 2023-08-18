@@ -20,5 +20,5 @@ function GymPage() {
     </div>
   );
 }
-
 export default GymPage;
+

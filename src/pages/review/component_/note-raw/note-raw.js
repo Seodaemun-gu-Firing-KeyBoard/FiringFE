@@ -2,11 +2,13 @@ import React  from "react";
 import './note-raw.scss';
 import { useState, useEffect } from "react";
 import axios from 'axios';
+import NoteList from "../note-list/note-list";
 
 //axios post 하는 곳,, user_id 임의로 설정 해둠!
 function NoteRaw (props) {
     const [ state, setState ] = useState(
-        {
+        {   
+
             title:'',
             text:'',
             subject:'후기작성',
@@ -25,10 +27,6 @@ function NoteRaw (props) {
             text: props.text,
         })
         console.log('렌더링이 완료되었습니다!');
-        console.log({
-          title,
-          text,
-        });
       }, []);
 
     const onChange = e =>{
@@ -47,7 +45,7 @@ function NoteRaw (props) {
             user_id : props.user_id,
             loc_id : props.loc_id
           })
-          .then(response => response.data ) 
+          .then(response => alert('후기가 작성되었습니다.')) 
           .catch(e => {  // API 호출이 실패한 경우
             console.error(e);  // 에러표시
           });
@@ -57,6 +55,7 @@ function NoteRaw (props) {
         props.action(state.title, state.text, props.noteNum);
         postNotes();
         props.close();
+        window.location.reload();
     };
 
     return (
@@ -88,6 +87,7 @@ function NoteRaw (props) {
             <div id="add-or-change-note-button">
                 <button onClick={execute}>작성하기</button>
             </div>
+            
         </>
     )
 
