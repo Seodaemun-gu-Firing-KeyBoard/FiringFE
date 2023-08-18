@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+import "./FacilityDetail.css";
 const typeMapping = {
   100: {
     name: "체육시설",

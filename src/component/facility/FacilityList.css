@@ -1,0 +1,51 @@
+/* FacilityList.css */
+.facility-list-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .facility-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .facility-box {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .facility-box:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .facility-info {
+    margin-top: 10px;
+  }
+  
+  /* 수정된 부분: 글씨 크기와 글씨체 */
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #777;
+    margin: 0;
+  }
+  

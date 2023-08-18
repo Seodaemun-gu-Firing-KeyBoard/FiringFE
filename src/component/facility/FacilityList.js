@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./FacilityList.css";
 
 function FacilityList({ facilityType }) {
   // facilityType을 props로 받아옴
