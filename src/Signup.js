@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { SuccessModal, ErrorModal } from "./Modals"; // 모달 컴포넌트 경로
 
-const LogInPage = () => {
+const SignInPage = () => {
   const navigator = useNavigate();
   const [formData, setFormData] = useState({});
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -17,7 +17,7 @@ const LogInPage = () => {
   //     e.target;
   //   };
 
-  const login = () => {
+  const signUp = () => {
     /*props.login();*/
     if (isFormValid) {
       navigator("/");
@@ -37,7 +37,7 @@ const LogInPage = () => {
 
     axios
       .post(
-        `http://127.0.0.1:8000/api/auth/login/`,
+        `http://127.0.0.1:8000/api/auth/signup/`,
         // name: "asdf",
         // teamname: "asdf",
         // call: "asdfasdf",
@@ -60,7 +60,7 @@ const LogInPage = () => {
         console.error(error);
         setShowSuccessModal(false);
         setShowErrorModal(true);
-        setErrorMessage("로그인에 실패했습니다.");
+        setErrorMessage("회원가입에 실패했습니다.");
       });
 
     // 여기서 폼 데이터를 백엔드로 전송합니다 (Axios 또는 다른 네트워크 요청 라이브러리 사용).
@@ -85,6 +85,14 @@ const LogInPage = () => {
             value={formData.email}
             onChange={handleChange}
           ></input>
+          <div className="LP-container-form-input-text2">닉네임</div>
+          <input
+            className="LP-container-form-inputPW"
+            placeholder=" 닉네임을 입력 "
+            name="nickname"
+            value={formData.nickname}
+            onChange={handleChange}
+          ></input>
           <div className="LP-container-form-input-text2">비밀번호</div>
           <input
             className="LP-container-form-inputPW"
@@ -101,7 +109,7 @@ const LogInPage = () => {
                 ? "LP-container-form-logInButton-unActive "
                 : "LP-container-form-logInButton-active"
             }`}
-            onClick={login}
+            onClick={signUp}
           >
             <div
               className={`LP-container-form-logInButton-text ${
@@ -110,18 +118,11 @@ const LogInPage = () => {
                   : "LP-container-form-logInButton-text-active"
               }`}
             >
-              로그인
+              회원가입
             </div>
           </button>
         </form>
-        <div className="LP-container-footer">
-          <div className="LP-container-footer-text1">
-            아직 회원이 아니신가요?
-          </div>
-          <Link to={"/signup"} className="LP-container-footer-text2">
-            회원가입
-          </Link>
-        </div>
+        
       </div>
 
       {showSuccessModal && (
@@ -135,4 +136,4 @@ const LogInPage = () => {
 
   );
 };
-export default LogInPage;
+export default SignInPage;

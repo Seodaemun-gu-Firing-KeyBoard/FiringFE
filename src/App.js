@@ -4,7 +4,12 @@ import Locations from "./pages/locaions";
 import Main from "./main";
 import "bootstrap/dist/css/bootstrap.css";
 import Login from "./login.js";
+<<<<<<< HEAD
 import Signup from "./signup.js";
+=======
+import Signup from "./Signup.js";
+import Search from "./search.js";
+>>>>>>> 91fa467 (feat: 회원가입, 로그인)
 import Home from "./homepage";
 
 import GymIconPage from "./pages/IconPage/Gym.js";
