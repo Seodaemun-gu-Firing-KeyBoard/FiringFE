@@ -18,7 +18,7 @@ function MyInfo() {
   //modal 닉네임 수정 안됨.
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const changeNickname = (e) => {
+  const logout_my = (e) => {
     const {name,value} = e.target;
     setUser({
       ...user,
@@ -50,24 +50,27 @@ function MyInfo() {
                 </ListGroup>
                 <Card.Body>
                   <Button className='mybtn' variant="primary" onClick={handleShow}>
-                    닉네임 수정하기
+                    로그아웃 하기
                   </Button>
 
                   <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                      <Modal.Title>닉네임 수정하기</Modal.Title>
+                      <Modal.Title>로그아웃</Modal.Title>
                     </Modal.Header>
                     <Modal.Body >
                       <Form>
                         <Form.Group className="mb-3 col" controlId="exampleForm.ControlInput1">
-                          <Form.Label>새로운 닉네임</Form.Label>
-                          <Form.Control
+                          {/* <Form.Label>로그아웃</Form.Label> */}
+                          {/* <Form.Control
                             type="text"
-                            name='nickname'
-                            onChange={changeNickname}
+                            name='logout'
+                            // onChange={changeNickname}
                             placeholder="새로운 닉네임을 입력해 주세요."
-                            value={user.nickname}
-                          />
+                            // value={user.nickname}
+                          /> */}
+                          <div>
+                            <h3>로그아웃 하시겠습니까?</h3>
+                          </div>
                         </Form.Group>
                       
                       </Form>
@@ -77,7 +80,7 @@ function MyInfo() {
                         Close
                       </Button>
                       <Button variant="primary" onClick={handleClose}>
-                        Save Changes
+                        logout
                       </Button>
                     </Modal.Footer>
                   </Modal>
