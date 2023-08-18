@@ -1,5 +1,5 @@
 /* 모달 컨테이너 스타일 */
-.modal {
+.modal1 {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@
   }
   
   /* 모달 내용 스타일 */
-  .modal-content {
+  .modal-content1 {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
