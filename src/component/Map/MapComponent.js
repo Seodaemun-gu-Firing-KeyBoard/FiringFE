@@ -26,8 +26,8 @@ function MapComponent({ facilityType }) {
       mapDataControl: true,
     };
 
-    const newMap = new naver.maps.Map("map", mapOptions); // Create a new map instance
-    setMap(newMap); // Set the map instance in state
+    const newMap = new naver.maps.Map("map", mapOptions);
+    setMap(newMap);
 
     const infoWindow = new naver.maps.InfoWindow();
 
@@ -55,7 +55,7 @@ function MapComponent({ facilityType }) {
                 const point = new naver.maps.Point(result.x, result.y);
                 const marker = new naver.maps.Marker({
                   position: point,
-                  map: newMap, // Use the new map instance
+                  map: newMap,
                 });
 
                 naver.maps.Event.addListener(marker, "click", function () {
@@ -66,7 +66,7 @@ function MapComponent({ facilityType }) {
                     <a href="/facility/${facility.id}">상세 정보 보기</a>
                   </div>
                 `);
-                  infoWindow.open(newMap, marker); // Use the new map instance
+                  infoWindow.open(newMap, marker);
                 });
               }
             );

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import FacilityList from "../facility/FacilityList";
 
 function SearchComponent() {
   const [loading, setLoading] = useState(true);
   const [map, setMap] = useState(null);
+  const [filterTypeDetail, setFilterTypeDetail] = useState("all");
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -16,10 +18,9 @@ function SearchComponent() {
 
   const initializeMap = () => {
     const naver = window.naver || {};
-
     const mapOptions = {
       center: new naver.maps.LatLng(37.580541, 126.922365),
-      zoom: 15,
+      zoom: 10,
       mapTypeControl: true,
       zoomControl: true,
       scaleControl: true,
@@ -35,7 +36,13 @@ function SearchComponent() {
       .get("http://127.0.0.1:8000/map/facility/")
       .then((response) => response.data)
       .then((facilities) => {
-        facilities.forEach((facility) => {
+        const filteredFacilities = facilities.filter(
+          (facility) =>
+            filterTypeDetail === "all" ||
+            facility.typeDetail === filterTypeDetail
+        );
+
+        filteredFacilities.forEach((facility) => {
           naver.maps.Service.geocode(
             {
               query: facility.address,
@@ -90,7 +97,7 @@ function SearchComponent() {
             map: map, // Use the existing map instance
           });
           map.setCenter(currentPosition);
-          map.setZoom(13);
+          map.setZoom(10);
         },
         function (error) {
           alert("현재 위치를 가져올 수 없습니다.");
@@ -135,10 +142,14 @@ function SearchComponent() {
         });
 
         map.setCenter(point);
-        map.setZoom(13);
+        map.setZoom(10);
       }
     );
   }
+
+  const handleFilterChange = (typeDetail) => {
+    setFilterTypeDetail(typeDetail);
+  };
 
   return (
     <>
@@ -150,6 +161,10 @@ function SearchComponent() {
       <button onClick={handleSearchFacilityClick}>검색</button>
       <br />
       <button onClick={handleCurrentLocationClick}>현재위치 보기</button>
+      <br />
+      <div className="place-list">
+        <FacilityList handleFilterChange={handleFilterChange} />
+      </div>
       <div id="map" style={{ width: "1000px", height: "1000px" }}></div>
     </>
   );
