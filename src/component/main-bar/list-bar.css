@@ -8,7 +8,7 @@
   .navbar__menu li {
     padding: 5px 30px;
   }
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1570px) {
     .navbar__menu{
         display: none;
     }
