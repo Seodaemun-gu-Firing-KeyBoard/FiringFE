@@ -6,6 +6,8 @@ import "./FacilityList.css";
 function FacilityList({ facilityType }) {
   // facilityType을 props로 받아옴
   const [facilities, setFacilities] = useState([]);
+  const [visibleFacilities, setVisibleFacilities] = useState([]); // 상태 추가
+  const [visibleCount, setVisibleCount] = useState(10);
 
   useEffect(() => {
     fetchFacilities();
@@ -18,16 +20,24 @@ function FacilityList({ facilityType }) {
         (facility) => facility.type == facilityType
       );
       setFacilities(filteredFacilities);
+      setVisibleFacilities(filteredFacilities.slice(0, visibleCount));
     } catch (error) {
       console.error("Error fetching facilities:", error);
     }
   };
 
+  const loadMore = () => {
+    const newVisibleCount = visibleCount + 10;
+    setVisibleCount(newVisibleCount);
+    setVisibleFacilities(facilities.slice(0, newVisibleCount));
+  };
+  
+
   return (
     <div className="facility-list-container">
       <h2>Facility List</h2>
       <div className="facility-boxes">
-        {facilities.map((facility) => (
+        {visibleFacilities.map((facility) => ( // visibleFacilities 사용
           <Link
             to={`/facility/${facility.id}`}
             key={facility.id}
@@ -38,6 +48,13 @@ function FacilityList({ facilityType }) {
           </Link>
         ))}
       </div>
+      {visibleCount < facilities.length && (
+        <div className="button-container">
+        <button className="load-more-button" onClick={loadMore}>
+          더보기
+          </button>
+          </div>
+      )}
     </div>
   );
 }

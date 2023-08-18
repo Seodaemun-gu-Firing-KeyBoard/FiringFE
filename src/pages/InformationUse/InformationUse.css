@@ -1,0 +1,73 @@
+/* InformationUse.css */
+.information-container {
+    font-family: 'Noto Serif KR';
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 30px;
+  }
+  
+  .service-features {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .feature {
+
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 10px;
+  }
+  
+  .feature h3 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  
+  .feature p {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .load-more-button {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 11px;
+  }
+  
+  .load-more-button:hover {
+    background-color: #7d848c;
+  }
+  

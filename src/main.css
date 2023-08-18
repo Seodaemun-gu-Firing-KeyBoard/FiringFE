@@ -1,5 +1,6 @@
 .Main {
     text-align: center;
+    
   }
   
   .blog {
@@ -46,6 +47,7 @@
   
   .navbar{
     /* position: sticky; */
+    font-family: 'SUITE-Regular';
     top: 0;
     z-index: 2;
     display: flex;
@@ -196,6 +198,7 @@
   }
   
   .gym p{
+    font-family: 'Noto Serif KR';
     color: black;
     text-decoration: none;
     font-weight: bold;
@@ -208,6 +211,7 @@
   }
   
   .space p{
+    font-family: 'Noto Serif KR';
     color: black;
     text-decoration: none;
     font-weight: bold;
@@ -220,6 +224,7 @@
   }
   
   .culture p{
+    font-family: 'Noto Serif KR';
     color: black;
     text-decoration: none;
     font-weight: bold;
