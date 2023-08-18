@@ -77,7 +77,7 @@ function NoteRaw (props) {
                 <br />
                 <textarea
                     id="note-text"
-                    name="text"
+                    name="text"t
                     placeholder="텍스트 입력하세요."
                     value={text}
                     onChange={onChange}
