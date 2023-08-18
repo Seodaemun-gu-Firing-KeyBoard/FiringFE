@@ -2,8 +2,8 @@ import React from "react";
 import "./Modals.css";
 
 const SuccessModal = ({ onClose }) => (
-  <div className="Modal">
-    <div className="Modal-content">
+  <div className="Modal2">
+    <div className="Modal-content2">
       <p>로그인에 성공했습니다.</p>
       <button onClick={onClose}>닫기</button>
     </div>
@@ -11,8 +11,8 @@ const SuccessModal = ({ onClose }) => (
 );
 
 const ErrorModal = ({ onClose, errorMessage }) => (
-  <div className="Modal">
-    <div className="Modal-scontent">
+  <div className="Modal2">
+    <div className="Modal-scontent2">
       <p>{errorMessage}</p>
       <button onClick={onClose}>닫기</button>
     </div>
