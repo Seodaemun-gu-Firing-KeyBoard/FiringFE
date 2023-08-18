@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import OffcanvasExample from '../../component/bar/bar';
 import './mypage.scss';
 import {Link} from 'react-router-dom';
+import { useState } from 'react';
+import ModalBulb from '../../component/bulb/modalBulb';
 
 const Container = styled.div`
 //   height: 100vh;
@@ -23,11 +25,14 @@ const MyDiv = styled.div`
     padding-top : 30px;
 `;
 function MyPage() {
+  const bname = "마이페이지";
+  const ex = "마이 페이지 입니다.\n해당 페이지에서는 회원님의 회원 정보와 이전에 작성했던 후기 리스트를 확인하실 수 있습니다.";
   return(
     <>  
         <div id='searchbar'>
             <OffcanvasExample />
         </div>
+        <ModalBulb bname={bname} ex={ex} />
         <Container>
             <MyDiv>
               <div>
