@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import FacilityList from "../facility/FacilityList";
+import "./SearchComponent.css"; // 추가한 CSS 파일을 import
+import ListBar from '../main-bar/list-bar';
+import BoxBar from '../main-bar/box-bar';
+import { Link } from "react-router-dom";
 
 function SearchComponent() {
   const [loading, setLoading] = useState(true);
@@ -152,22 +156,40 @@ function SearchComponent() {
   };
 
   return (
-    <>
-      <input
-        type="text"
-        id="addressInput"
-        placeholder="주소를 입력해주세요."
-      ></input>
-      <button onClick={handleSearchFacilityClick}>검색</button>
-      <br />
-      <button onClick={handleCurrentLocationClick}>현재위치 보기</button>
-      <br />
-      <div className="place-list">
-        <FacilityList handleFilterChange={handleFilterChange} />
+    <div>
+      <div className="navbar" id="mb">
+        <div className="g">
+          <ul className="navbar__logo">
+            <Link to="/">
+              <img src="img/logo.png" alt="Logo" />
+            </Link>
+          </ul>
+          <div className="">공공시설 예약서비스</div>
+        </div>
+        <ListBar className="list" />
+        <BoxBar className="box" />
       </div>
-      <div id="map" style={{ width: "1000px", height: "1000px" }}></div>
-    </>
-  );
-}
 
-export default SearchComponent;
+      <div>
+        <div className="container">
+          <div className="input-container">
+            <input
+              type="text"
+              id="addressInput"
+              placeholder="주소를 입력해주세요."
+            />
+            <button onClick={handleSearchFacilityClick}>검색</button>
+          </div>
+          <button onClick={handleCurrentLocationClick} className="location-button">
+            현재위치 보기
+          </button>
+          <div className="place-list">
+            <FacilityList handleFilterChange={handleFilterChange} />
+          </div>
+          <div id="map"></div>
+        </div>
+      </div>
+      </div>
+      );
+  }
+      export default SearchComponent;

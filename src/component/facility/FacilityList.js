@@ -250,13 +250,9 @@ function FacilityList({ facilityType }) {
           다음 페이지
         </button>
       </div>
-      {visibleCount < facilities.length && (
-        <div className="button-container">
-        <button className="load-more-button" onClick={loadMore}>
-          더보기
-          </button>
-          </div>
-      )}
+      
+        
+      
     </div>
   );
 }
