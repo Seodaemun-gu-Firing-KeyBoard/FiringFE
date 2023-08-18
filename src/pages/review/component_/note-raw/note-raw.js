@@ -27,10 +27,6 @@ function NoteRaw (props) {
             text: props.text,
         })
         console.log('렌더링이 완료되었습니다!');
-        // console.log({
-        //   title,
-        //   text,
-        // });
       }, []);
 
     const onChange = e =>{
@@ -49,7 +45,7 @@ function NoteRaw (props) {
             user_id : props.user_id,
             loc_id : props.loc_id
           })
-          .then(response => response.data ) 
+          .then(response => alert('후기가 작성되었습니다.')) 
           .catch(e => {  // API 호출이 실패한 경우
             console.error(e);  // 에러표시
           });
@@ -59,6 +55,7 @@ function NoteRaw (props) {
         props.action(state.title, state.text, props.noteNum);
         postNotes();
         props.close();
+        window.location.reload();
     };
 
     return (

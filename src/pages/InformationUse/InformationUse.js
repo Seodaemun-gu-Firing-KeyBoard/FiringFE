@@ -17,7 +17,7 @@ function InformationUse() {
             <img src="img/logo.png" alt="Logo" />
           </Link>
         </ul>
-        <h2>공공시설 예약서비스</h2>
+        <div className="">공공시설 예약서비스</div>
       </div>
       <ListBar className="list" />
       <BoxBar className="box" />

@@ -5,7 +5,6 @@ import Main from "./main";
 import "bootstrap/dist/css/bootstrap.css";
 import Login from "./login.js";
 import Signup from "./signup.js";
-import Search from "./search.js";
 import Home from "./homepage";
 
 import GymIconPage from "./pages/IconPage/Gym.js";
@@ -16,7 +15,8 @@ import MyPage from "./pages/MyPage/mypage";
 import MyInfo from "./pages/MyPage/MyInfo";
 import MyReview from "./pages/MyPage/myreview";
 import FacilityDetail from "./component/facility/FacilityDetail";
-import InformationUse from './pages/InformationUse/InformationUse.js';
+import SearchComponent from "./component/search/SearchComponent";
+import InformationUse from "./pages/InformationUse/InformationUse.js";
 
 function App() {
   return (
@@ -25,7 +25,6 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route path="/p/*" element={<Locations />} />
-          <Route path="/search" element={<Search />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/gym" element={<GymIconPage />} />
@@ -36,6 +35,8 @@ function App() {
           <Route path="/myreview" element={<MyReview />} />
           <Route path="/facility/:id" element={<FacilityDetail />} />
           <Route path="/InformationUse" element={<InformationUse/>} />
+          <Route path="/searchFacility" element={<SearchComponent />} />
+          <Route path="/n=InformationUse" element={<InformationUse />} />
         </Routes>
       </div>
     </div>

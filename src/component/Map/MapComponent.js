@@ -3,6 +3,7 @@ import axios from "axios";
 
 function MapComponent({ facilityType }) {
   const [loading, setLoading] = useState(true);
+  const [map, setMap] = useState(null);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -18,14 +19,16 @@ function MapComponent({ facilityType }) {
 
     const mapOptions = {
       center: new naver.maps.LatLng(37.580541, 126.922365),
-      zoom: 13,
+      zoom: 15,
       mapTypeControl: true,
       zoomControl: true,
       scaleControl: true,
       mapDataControl: true,
     };
 
-    const map = new naver.maps.Map("map", mapOptions);
+    const newMap = new naver.maps.Map("map", mapOptions);
+    setMap(newMap);
+
     const infoWindow = new naver.maps.InfoWindow();
 
     axios
@@ -52,7 +55,7 @@ function MapComponent({ facilityType }) {
                 const point = new naver.maps.Point(result.x, result.y);
                 const marker = new naver.maps.Marker({
                   position: point,
-                  map: map,
+                  map: newMap,
                 });
 
                 naver.maps.Event.addListener(marker, "click", function () {
@@ -63,7 +66,7 @@ function MapComponent({ facilityType }) {
                     <a href="/facility/${facility.id}">상세 정보 보기</a>
                   </div>
                 `);
-                  infoWindow.open(map, marker);
+                  infoWindow.open(newMap, marker);
                 });
               }
             );
@@ -76,8 +79,33 @@ function MapComponent({ facilityType }) {
       });
   };
 
+  const handleCurrentLocationClick = () => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          const currentPosition = new window.naver.maps.LatLng(lat, lng);
+
+          const marker = new window.naver.maps.Marker({
+            position: currentPosition,
+            map: map, // Use the existing map instance
+          });
+          map.setCenter(currentPosition);
+          map.setZoom(13);
+        },
+        function (error) {
+          alert("현재 위치를 가져올 수 없습니다.");
+        }
+      );
+    } else {
+      alert("브라우저가 위치 정보를 지원하지 않습니다.");
+    }
+  };
+
   return (
     <div>
+      <button onClick={handleCurrentLocationClick}>현재위치 보기</button>
       <div id="map" style={{ width: "600px", height: "600px" }}></div>
     </div>
   );
