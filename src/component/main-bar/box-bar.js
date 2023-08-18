@@ -28,10 +28,10 @@ function BoxBar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">마이페이지</Nav.Link>
-                  <Nav.Link href="#action2">이용안내</Nav.Link>
-                  <Nav.Link href="#action3">고객센터</Nav.Link>
-                  <Nav.Link href="#action4">로그인/로그아웃</Nav.Link>
+                  <Nav.Link href="/mypage">마이페이지</Nav.Link>
+                  <Nav.Link href="/InformationUse">이용안내</Nav.Link>
+                  <Nav.Link href="/">고객센터</Nav.Link>
+                  <Nav.Link href="/login">로그인/로그아웃</Nav.Link>
                 </Nav>
                 <Form className="d-flex">
                   <Form.Control

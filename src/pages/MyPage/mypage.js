@@ -39,10 +39,10 @@ function MyPage() {
                 <h1>[마이 페이지]</h1>
                 <div>
                   <div class="b_container">
-                    <Link to='/myinfo'>
+                    <Link to='/myinfo' style={{ textDecoration: 'none' }}>
                         <button class="btn-1">내 정보</button>
                     </Link>
-                    <Link to='/myreview'>
+                    <Link to='/myreview' style={{ textDecoration: 'none' }}>
                         <button class="btn-2">내가 쓴 리뷰 보러가기</button>
                     </Link>
                   </div>
