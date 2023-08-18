@@ -1,5 +1,5 @@
 /* 모달 컨테이너 스타일 */
-.modal {
+.Modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,11 +12,11 @@
   }
   
   /* 모달 내용 스타일 */
-  .modal-content {
+  .Modal-content {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadows: 0px 2px 4px rgba(0, 0, 0, 0.1);
     width: 3    0%;
     height: 15%;
   }
