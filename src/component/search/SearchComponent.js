@@ -142,7 +142,7 @@ function SearchComponent() {
         });
 
         map.setCenter(point);
-        map.setZoom(10);
+        map.setZoom(17);
       }
     );
   }
