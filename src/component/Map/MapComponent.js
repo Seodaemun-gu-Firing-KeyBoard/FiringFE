@@ -3,7 +3,7 @@ import axios from "axios";
 
 function MapComponent({ facilityType }) {
   const [loading, setLoading] = useState(true);
-  const [map, setMap] = useState(null); // Store the map instance in state
+  const [map, setMap] = useState(null);
 
   useEffect(() => {
     const script = document.createElement("script");
