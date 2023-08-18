@@ -9,7 +9,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 function BoxBar() {
+  // const expand = "lg";
   return (
+    
     <>
         {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className='boxbar'>

@@ -16,7 +16,7 @@ function OffcanvasExample() {
               <ul className="navbar__logo">
                 <img src="/img/logo.png" />
               </ul>
-              <Navbar.Brand href="#">공공시설 예약 서비스</Navbar.Brand>
+              <Navbar.Brand href="/">공공시설 예약 서비스</Navbar.Brand>
             </div>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
@@ -31,9 +31,9 @@ function OffcanvasExample() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">체육시설</Nav.Link>
-                  <Nav.Link href="#action2">공간시설</Nav.Link>
-                  <Nav.Link href="#action2">문화시설</Nav.Link>
+                  <Nav.Link href="/gym">체육시설</Nav.Link>
+                  <Nav.Link href="/space">공간시설</Nav.Link>
+                  <Nav.Link href="/culture">문화시설</Nav.Link>
                 </Nav>
                 <Form className="d-flex">
                   <Form.Control
