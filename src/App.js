@@ -34,6 +34,7 @@ function App() {
           <Route path="/myinfo" element={<MyInfo />} />
           <Route path="/myreview" element={<MyReview />} />
           <Route path="/facility/:id" element={<FacilityDetail />} />
+          <Route path="/InformationUse" element={<InformationUse/>} />
           <Route path="/searchFacility" element={<SearchComponent />} />
           <Route path="/n=InformationUse" element={<InformationUse />} />
         </Routes>

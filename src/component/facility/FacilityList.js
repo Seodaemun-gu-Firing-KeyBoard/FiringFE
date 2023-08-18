@@ -250,6 +250,9 @@ function FacilityList({ facilityType }) {
           다음 페이지
         </button>
       </div>
+      
+        
+      
     </div>
   );
 }

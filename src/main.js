@@ -38,7 +38,7 @@ function Main() {
                 <form className="d-flex" role="search">
                   <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
                   <button className="btn btn-outline-success" type="submit">
-                    가고싶은 공공시설을 검색하세요 !{" "}
+                    가고싶은 공공시설을 검색하세요 !! (｡•̀ᴗ-)✧ {" "}
                   </button>
                 </form>
               </div>
