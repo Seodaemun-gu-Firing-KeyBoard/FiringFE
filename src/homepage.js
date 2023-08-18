@@ -66,7 +66,7 @@ function homepage() {
         <div class="container text-center">
             <div class="row">
                 <div class="col">
-                    <Link to="/gym">
+                    <Link to="/gym" style={{ textDecoration: 'none' }}>
                         <ul className="gym">
                             <img src="img/gym.png" />
                             <p>체육시설</p>
@@ -76,7 +76,7 @@ function homepage() {
 
                 <div class="col">
                     <Link to="/space">
-                        <ul className="space">
+                        <ul className="space" style={{ textDecoration: 'none' }}>
                             <img src="img/meething-room.png" />
                             <p>공간시설</p>
                         </ul>
@@ -84,7 +84,7 @@ function homepage() {
                 </div>
 
                 <div class="col">
-                    <Link to="/culture">
+                    <Link to="/culture" style={{ textDecoration: 'none' }}>
                         <ul className="culture">
                             <img src="img/theatre.png" />
                             <p>문화시설</p>
