@@ -10,6 +10,7 @@ function MapComponent({ facilityType }) {
       "https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=2lhimp3vcd&submodules=geocoder";
     script.async = true;
     script.onload = initializeMap;
+    script.onload = handleCurrentLocationClick;
     document.head.appendChild(script);
   }, []);
 
@@ -18,7 +19,7 @@ function MapComponent({ facilityType }) {
 
     const mapOptions = {
       center: new naver.maps.LatLng(37.580541, 126.922365),
-      zoom: 13,
+      zoom: 15,
       mapTypeControl: true,
       zoomControl: true,
       scaleControl: true,
@@ -76,8 +77,46 @@ function MapComponent({ facilityType }) {
       });
   };
 
+  const handleCurrentLocationClick = () => {
+    const naver = window.naver || {};
+
+    const mapOptions = {
+      center: new naver.maps.LatLng(37.580541, 126.922365),
+      zoom: 15,
+      mapTypeControl: true,
+      zoomControl: true,
+      scaleControl: true,
+      mapDataControl: true,
+    };
+
+    const map = new naver.maps.Map("map", mapOptions);
+
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          const currentPosition = new window.naver.maps.LatLng(lat, lng);
+
+          const marker = new naver.maps.Marker({
+            position: currentPosition,
+            map: map,
+          });
+          map.setCenter(currentPosition);
+          map.setZoom(13);
+        },
+        function (error) {
+          alert("현재 위치를 가져올 수 없습니다.");
+        }
+      );
+    } else {
+      alert("브라우저가 위치 정보를 지원하지 않습니다.");
+    }
+  };
+
   return (
     <div>
+      <button>현재위치 보기</button>
       <div id="map" style={{ width: "1000px", height: "1000px" }}></div>
     </div>
   );
