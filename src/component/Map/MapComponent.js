@@ -3,6 +3,7 @@ import axios from "axios";
 
 function MapComponent({ facilityType }) {
   const [loading, setLoading] = useState(true);
+  const [map, setMap] = useState(null); // Store the map instance in state
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -10,7 +11,6 @@ function MapComponent({ facilityType }) {
       "https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=2lhimp3vcd&submodules=geocoder";
     script.async = true;
     script.onload = initializeMap;
-    script.onload = handleCurrentLocationClick;
     document.head.appendChild(script);
   }, []);
 
@@ -26,7 +26,9 @@ function MapComponent({ facilityType }) {
       mapDataControl: true,
     };
 
-    const map = new naver.maps.Map("map", mapOptions);
+    const newMap = new naver.maps.Map("map", mapOptions); // Create a new map instance
+    setMap(newMap); // Set the map instance in state
+
     const infoWindow = new naver.maps.InfoWindow();
 
     axios
@@ -53,7 +55,7 @@ function MapComponent({ facilityType }) {
                 const point = new naver.maps.Point(result.x, result.y);
                 const marker = new naver.maps.Marker({
                   position: point,
-                  map: map,
+                  map: newMap, // Use the new map instance
                 });
 
                 naver.maps.Event.addListener(marker, "click", function () {
@@ -64,7 +66,7 @@ function MapComponent({ facilityType }) {
                     <a href="/facility/${facility.id}">상세 정보 보기</a>
                   </div>
                 `);
-                  infoWindow.open(map, marker);
+                  infoWindow.open(newMap, marker); // Use the new map instance
                 });
               }
             );
@@ -78,19 +80,6 @@ function MapComponent({ facilityType }) {
   };
 
   const handleCurrentLocationClick = () => {
-    const naver = window.naver || {};
-
-    const mapOptions = {
-      center: new naver.maps.LatLng(37.580541, 126.922365),
-      zoom: 15,
-      mapTypeControl: true,
-      zoomControl: true,
-      scaleControl: true,
-      mapDataControl: true,
-    };
-
-    const map = new naver.maps.Map("map", mapOptions);
-
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         function (position) {
@@ -98,9 +87,9 @@ function MapComponent({ facilityType }) {
           const lng = position.coords.longitude;
           const currentPosition = new window.naver.maps.LatLng(lat, lng);
 
-          const marker = new naver.maps.Marker({
+          const marker = new window.naver.maps.Marker({
             position: currentPosition,
-            map: map,
+            map: map, // Use the existing map instance
           });
           map.setCenter(currentPosition);
           map.setZoom(13);
@@ -116,7 +105,7 @@ function MapComponent({ facilityType }) {
 
   return (
     <div>
-      <button>현재위치 보기</button>
+      <button onClick={handleCurrentLocationClick}>현재위치 보기</button>
       <div id="map" style={{ width: "1000px", height: "1000px" }}></div>
     </div>
   );
